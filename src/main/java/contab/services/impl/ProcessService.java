@@ -1,6 +1,6 @@
 package contab.services.impl;
 
-import contab.services.IProcessService;
+import contab.services.*;
 import org.springframework.stereotype.Service;
 
 // Inversão de dependencia
@@ -8,13 +8,33 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProcessService implements IProcessService {
+
+    private final IProcessClientService processClientService;
+    private final IMessageService messageService;
+
+    public ProcessService(
+            IProcessClientService processClientService,
+            IMessageService messageService
+    ) {
+        this.processClientService = processClientService;
+        this.messageService = messageService;
+    }
+
     @Override
     public String process() {
-        return "processing...";
+        return messageService.sendMessage(
+                processClientService.isProcessEnabled()
+        );
     }
 
     @Override
     public String process(String data) {
-        return data + " processing";
+        if (data == null) {
+            return "ERRO";
+        }
+
+        return data + messageService.sendMessage(
+                processClientService.isProcessEnabled()
+        );
     }
 }

@@ -16,6 +16,7 @@ public class ProcessDataController {
 
     public ProcessDataController(IProcessService processService) {
         this.processService = processService;
+
     }
 
     @GetMapping("/data")

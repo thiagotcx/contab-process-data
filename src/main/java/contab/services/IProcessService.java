@@ -6,5 +6,6 @@ package contab.services;
 public interface IProcessService {
     String process();
 
+    // OUTPUT      // INPUT
     String process(String data);
 }
