@@ -19,22 +19,22 @@ public class ProcessEntity {
     private Long processId;
 
     @Column(name = "process_date")
-    private LocalDate processDate;
+    private LocalDate processDate; // 2025-01-14
 
     @Setter
     @Column(name = "is_processed")
-    private boolean isProcessed;
+    private boolean isProcessed; // false
 
     @Column(name = "created_at")
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt; //2025-02-13 23:46:52
 
     @Setter
     @Column(name = "init_process_at")
-    private LocalDateTime initProcessAt;
+    private LocalDateTime initProcessAt; // 2025-02-14 10:00:00
 
     @Setter
     @Column(name = "finish_process_at")
-    private LocalDateTime finishProcessAt;
+    private LocalDateTime finishProcessAt; // 2025-02-14 10:30:14
 
     @Setter
     @Column(name = "deleted_at")
