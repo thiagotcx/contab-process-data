@@ -1,26 +1,26 @@
 package contab.controllers;
 
-import contab.dto.ProcessMonthlyRecord;
-import contab.services.IProcessService;
+import contab.dto.ProductDTO;
+import contab.services.IProductService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/process")
 public class ProcessDataController {
 
-    private final IProcessService processService;
+    private final IProductService productService;
 
-    public ProcessDataController(IProcessService processService) {
-        this.processService = processService;
+    public ProcessDataController(IProductService productService) {
+        this.productService = productService;
     }
 
-    @GetMapping("/get-monthly-by-selected-date")
-    public ResponseEntity<List<ProcessMonthlyRecord>> getMonthlyBySelectedDate() {
-        return null;
+    @GetMapping
+    public ResponseEntity<List<ProductDTO>> getArtists() {
+        return ResponseEntity.ok(this.productService.getActiveProducts());
     }
 }
