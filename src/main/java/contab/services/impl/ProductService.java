@@ -18,7 +18,7 @@ public class ProductService implements IProductService {
 
     @Override
     public List<ProductDTO> getActiveProducts() {
-        var productEntityList = productRepository.getActiveProducts();
+        var productEntityList = productRepository.getActivesWithJPQL();
 
         return productEntityList
                 .stream()
