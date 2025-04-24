@@ -1,7 +1,7 @@
 package contab.persistence.repositories;
 
-import contab.dto.ProductDTO;
-import contab.persistence.entities.ProductEntity;
+import contab.dto.CategoryDTO;
+import contab.persistence.entities.CategoryEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -9,22 +9,23 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
+public interface CategoryRepository extends JpaRepository<CategoryEntity, Long> {
 
     @Query(value = """
         SELECT
-            new contab.dto.ProductDTO(
+            new contab.dto.CategoryDTO(
                 C.description,
-                P.description,
-                P.price
+                COUNT(P)
             )
-        FROM ProductEntity P
-            INNER JOIN CategoryEntity C
-                ON P.categoryId = C.categoryId
+        FROM CategoryEntity C
+            INNER JOIN ProductEntity P
+                ON C.categoryId = P.categoryId
         WHERE P.isDeleted = false
             AND P.isActive = true
             AND C.isDeleted = false
             AND C.isActive = true
+        GROUP BY
+            C.description
     """)
-    List<ProductDTO> getActiveProducts();
+    List<CategoryDTO> getActiveCategories();
 }

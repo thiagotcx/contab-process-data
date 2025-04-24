@@ -1,9 +1,6 @@
 package contab.persistence.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -16,10 +13,10 @@ public class ProductEntity {
     @Column(name = "product_id", nullable = false)
     private Long productId;
 
-    @Column(nullable = false)
-    private String category;
+    @Column(name = "category_id", nullable = false)
+    private Long categoryId;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 150)
     private String description;
 
     @Column(nullable = false)
@@ -53,12 +50,8 @@ public class ProductEntity {
         this.productId = productId;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
+    public Long getCategory() {
+        return categoryId;
     }
 
     public String getDescription() {
