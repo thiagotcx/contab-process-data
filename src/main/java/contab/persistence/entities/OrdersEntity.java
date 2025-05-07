@@ -8,37 +8,37 @@ import java.time.LocalDateTime;
 @Table(name = "tb_orders", schema = "public")
 public class OrdersEntity {
 
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-@Column(name = "order_id", nullable = false)
-private Integer orderId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "order_id", nullable = false)
+    private Integer orderId;
 
-@Column(nullable = false)
-private String document;
+    @Column(nullable = false)
+    private String document;
 
-@Column(nullable = false)
-private String company;
+    @Column(nullable = false)
+    private String company;
 
-@Column(nullable = false)
-private Integer total;
+    @Column(nullable = false)
+    private Integer total;
 
-@Column(name = "is_created", nullable = false)
-private boolean isCreated;
+    @Column(name = "is_created", nullable = false)
+    private boolean isCreated;
 
-@Column(name = "is_finished", nullable = false)
-private boolean isFinished;
+    @Column(name = "is_finished", nullable = false)
+    private boolean isFinished;
 
-@Column(name = "is_canceled", nullable = false)
-private boolean isCanceled;
+    @Column(name = "is_canceled", nullable = false)
+    private boolean isCanceled;
 
-@Column(name = "is_invalid", nullable = false)
-private boolean isInvalid;
+    @Column(name = "is_invalid", nullable = false)
+    private boolean isInvalid;
 
-@Column(name = "created_at", nullable = false)
-private LocalDateTime createdAt;
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
 
-@Column(name = "status_updated_at", nullable = false)
-private LocalDateTime statusUpdatedAt;
+    @Column(name = "status_updated_at", nullable = false)
+    private LocalDateTime statusUpdatedAt;
 
     public Integer getOrderId() {
         return orderId;
