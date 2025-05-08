@@ -26,7 +26,7 @@ public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
         FROM OrderEntity o
                 INNER JOIN OrderProductEntity op
                     ON o.id = op.orderId
-        WHERE o.status = contab.enums.OrderStatus.CREATED
+        WHERE o.status = 'CREATED'
             AND op.isDeleted = false
             AND o.id = :orderId
         GROUP BY o.document, o.total
@@ -46,7 +46,7 @@ public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
         FROM OrderEntity o
                 INNER JOIN OrderProductEntity op
                     ON o.id = op.orderId
-        WHERE o.status = contab.enums.OrderStatus.CREATED
+        WHERE o.status = 'CREATED'
             AND op.isDeleted = false
         GROUP BY o.document, o.total
     """)
