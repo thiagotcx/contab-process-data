@@ -29,7 +29,7 @@ public class OrderProductsEntity {
     private Double price;
 
     @Column(nullable = false)
-    private Integer subTotal;
+    private Long subtTotal;
 
     @Column(name = "is_deleted", nullable = false)
     private boolean isDeleted;
@@ -85,12 +85,12 @@ public class OrderProductsEntity {
         this.price = price;
     }
 
-    public Integer getSubTotal() {
-        return subTotal;
+    public Long getSubtTotal() {
+        return subtTotal;
     }
 
-    public void setSubTotal(Integer subTotal) {
-        this.subTotal = subTotal;
+    public void setSubtTotal(Long subtTotal) {
+        this.subtTotal = subtTotal;
     }
 
     public boolean isDeleted() {

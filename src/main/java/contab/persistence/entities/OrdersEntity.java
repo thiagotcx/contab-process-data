@@ -11,7 +11,7 @@ public class OrdersEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "order_id", nullable = false)
-    private Integer orderId;
+    private Long orderId;
 
     @Column(nullable = false)
     private String document;
@@ -20,7 +20,7 @@ public class OrdersEntity {
     private String company;
 
     @Column(nullable = false)
-    private Integer total;
+    private Long total;
 
     @Column(name = "is_created", nullable = false)
     private boolean isCreated;
@@ -40,11 +40,11 @@ public class OrdersEntity {
     @Column(name = "status_updated_at", nullable = false)
     private LocalDateTime statusUpdatedAt;
 
-    public Integer getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Integer orderId) {
+    public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
 
@@ -64,11 +64,11 @@ public class OrdersEntity {
         this.company = company;
     }
 
-    public Integer getTotal() {
+    public Long getTotal() {
         return total;
     }
 
-    public void setTotal(Integer total) {
+    public void setTotal(Long total) {
         this.total = total;
     }
 
