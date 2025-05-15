@@ -1,6 +1,7 @@
 package contab.controllers;
 
 import contab.dto.CategoryDTO;
+import contab.dto.OrdersDTO;
 import contab.dto.ProductDTO;
 import contab.services.ICategoryService;
 import contab.services.IProductService;
@@ -17,13 +18,16 @@ public class ProcessDataController {
 
     private final IProductService productService;
     private final ICategoryService categoryService;
+    private final IOrdersService ordersService;
 
     public ProcessDataController(
             IProductService productService,
-            ICategoryService categoryService
+            ICategoryService categoryService,
+            IOrdersService ordersService
     ) {
         this.productService = productService;
         this.categoryService = categoryService;
+        this.ordersService = ordersService;
     }
 
     @GetMapping("/active-products")
@@ -34,4 +38,9 @@ public class ProcessDataController {
     public ResponseEntity<List<CategoryDTO>> getActiveCategories() {
         return ResponseEntity.ok(this.categoryService.getActiveCategories());
     }
+    }
+    @GetMapping("/active-orders")
+    public ResponseEntity<List<OrdersDTO>> getActiveOrders() {
+    return ResponseEntity.ok(this.ordersService.getActiveOrders());
 }
+
