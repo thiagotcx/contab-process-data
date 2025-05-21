@@ -2,7 +2,7 @@ package contab.dto;
 
 public class OrdersDTO {
 
-    private String document;
+    private String description;
     private String company;
     private Long total;
 
@@ -10,18 +10,18 @@ public class OrdersDTO {
 
     }
 
-    public OrdersDTO(String document, String company, Long total) {
-        this.document = document;
+    public OrdersDTO(String description, String company, Long total) {
+        this.description = description;
         this.company = company;
         this.total = total;
     }
 
-    public String getDocument() {
-        return document;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDocument(String document) {
-        this.document = document;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCompany() {

@@ -2,7 +2,6 @@ package contab.services.impl;
 
 import contab.dto.OrderProductsDTO;
 import contab.persistence.repositories.OrderProductsRepository;
-import contab.services.IOrderProductsService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +16,7 @@ public class OrderProductsService implements IOrderProductsService {
     }
 
     @Override
-    public List<OrderProductsDTO> findAll() {
+    public List<OrderProductsDTO> save() {
         return List.of();
     }
 }

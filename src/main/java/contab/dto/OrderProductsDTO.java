@@ -6,16 +6,18 @@ public class OrderProductsDTO {
     private String barcode;
     private Long amount;
     private Double price;
+    private Long subTotal;
 
     public OrderProductsDTO() {
 
     }
 
-    public OrderProductsDTO(String description, String barcode, Long amount, Double price) {
+    public OrderProductsDTO(String description, String barcode, Long amount, Double price, Long subTotal) {
         this.description = description;
         this.barcode = barcode;
         this.amount = amount;
         this.price = price;
+        this.subTotal = subTotal;
     }
 
     public String getDescription() {
@@ -48,5 +50,13 @@ public class OrderProductsDTO {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Long getSubTotal() {
+        return subTotal;
+    }
+
+    public void setSubTotal(Long subTotal) {
+        this.subTotal = subTotal;
     }
 }

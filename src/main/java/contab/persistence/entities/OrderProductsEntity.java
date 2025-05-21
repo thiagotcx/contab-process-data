@@ -29,13 +29,13 @@ public class OrderProductsEntity {
     private Double price;
 
     @Column(nullable = false)
-    private Long subtTotal;
+    private Long subTotal;
 
     @Column(name = "is_deleted", nullable = false)
     private boolean isDeleted;
 
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
+    @Column(name = "is_created", nullable = false)
+    private LocalDateTime isCreated;
 
     public Long getOrderProductId() {
         return orderProductId;
@@ -85,12 +85,12 @@ public class OrderProductsEntity {
         this.price = price;
     }
 
-    public Long getSubtTotal() {
-        return subtTotal;
+    public Long getSubTotal() {
+        return subTotal;
     }
 
-    public void setSubtTotal(Long subtTotal) {
-        this.subtTotal = subtTotal;
+    public void setSubTotal(Long subTotal) {
+        this.subTotal = subTotal;
     }
 
     public boolean isDeleted() {
@@ -101,11 +101,12 @@ public class OrderProductsEntity {
         isDeleted = deleted;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public LocalDateTime getIsCreated() {
+        return isCreated;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setIsCreated(LocalDateTime isCreated) {
+        this.isCreated = isCreated;
     }
+
 }
