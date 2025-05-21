@@ -1,5 +1,7 @@
 package contab.dto;
 
+import contab.persistence.entities.OrdersEntity;
+
 public class OrdersDTO {
 
     private String description;
@@ -14,6 +16,10 @@ public class OrdersDTO {
         this.description = description;
         this.company = company;
         this.total = total;
+    }
+
+    public OrdersDTO(OrdersEntity ordersEntity) {
+
     }
 
     public String getDescription() {
