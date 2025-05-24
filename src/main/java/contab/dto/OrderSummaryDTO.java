@@ -2,15 +2,10 @@ package contab.dto;
 
 import java.math.BigDecimal;
 
-public interface OrderSummaryDTO {
-
-    String getCompanyDocument();
-
-    BigDecimal getOrderTotal();
-
-    BigDecimal getProductTotal();
-
-    Long getProductQuantity();
-
-    BigDecimal getProductAmountTotal();
-}
+public record OrderSummaryDTO(
+        String companyDocument,
+        BigDecimal orderTotal,
+        BigDecimal productTotal,
+        Long productQuantity,
+        Double productAmountTotal
+) {}

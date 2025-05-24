@@ -2,17 +2,16 @@ package contab.services.impl;
 
 import contab.dto.OrderSummaryDTO;
 import contab.persistence.repositories.OrderProductsRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class OrderProductsServices {
+public class OrderProductService {
 
     private final OrderProductsRepository orderProductsRepository;
 
-    public OrderProductsServices(OrderProductsRepository orderProductsRepository) {
+    public OrderProductService(OrderProductsRepository orderProductsRepository) {
         this.orderProductsRepository = orderProductsRepository;
     }
 

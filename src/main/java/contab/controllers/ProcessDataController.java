@@ -24,6 +24,7 @@ public class ProcessDataController {
     ) {
         this.productService = productService;
         this.categoryService = categoryService;
+
     }
 
     @GetMapping("/active-products")

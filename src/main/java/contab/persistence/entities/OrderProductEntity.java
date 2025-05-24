@@ -4,23 +4,18 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-//tb_order_products
-
-//- orderProductId
-//- orderId
-//- description
-//- barcode
-//- amount
-//- price
-//- subTotal
-//- isDeleted
-//- createdAt
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
 @Entity
 @Table(name = "tb_order_products", schema = "public")
-public class OrderProducts {
+public class OrderProductEntity {
 
     @Id
     @Column(name = "order_product_id", nullable = false)
@@ -36,14 +31,13 @@ public class OrderProducts {
     private String barcode;
 
     @Column(nullable = false)
-    private BigDecimal amount;
+    private Float amount;
 
     @Column(nullable = false)
     private BigDecimal price;
 
     @Column(name = "sub_total", nullable = false)
     private BigDecimal subTotal;
-
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
