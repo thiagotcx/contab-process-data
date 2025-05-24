@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@RequiredArgsConstructor
+
 @Controller
 @RequestMapping("/process")
 public class ProcessDataController {

@@ -4,8 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
 public class CategoryDTO {
+
+    public CategoryDTO(String description, Long productAmount) {
+        this.description = description;
+        this.productAmount = productAmount;
+    }
+
     private String description;
     private Long productAmount;
 }
