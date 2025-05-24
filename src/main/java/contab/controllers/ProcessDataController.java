@@ -13,13 +13,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@RequiredArgsConstructor
+
 @Controller
 @RequestMapping("/process")
 public class ProcessDataController {
 
     private final IProductService productService;
     private final ICategoryService categoryService;
+
+    public ProcessDataController(
+            IProductService productService,
+            ICategoryService categoryService
+    ) {
+        this.productService = productService;
+        this.categoryService = categoryService;
+    }
 
     @GetMapping("/active-products")
     public ResponseEntity<List<ProductDTO>> getActiveProducts() {
