@@ -18,7 +18,7 @@ public class CategoryService implements ICategoryService {
 
     @Override
     public List<CategoryDTO> getActiveCategories() {
-
         return categoryRepository.getActiveCategories();
     }
+
 }

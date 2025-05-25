@@ -2,6 +2,7 @@ package contab.persistence.entities;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,7 +21,7 @@ public class OrdersEntity {
    private String company;
 
    @Column(nullable = false)
-   private Long total;
+   private BigDecimal total;
 
    @Column(name = "is_created", nullable = false)
    private boolean isCreated;
@@ -64,11 +65,11 @@ public class OrdersEntity {
       this.company = company;
    }
 
-   public Long getTotal() {
+   public BigDecimal getTotal() {
       return total;
    }
 
-   public void setTotal(Long total) {
+   public void setTotal(BigDecimal total) {
       this.total = total;
    }
 

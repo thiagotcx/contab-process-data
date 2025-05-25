@@ -2,17 +2,19 @@ package contab.dto;
 
 import contab.persistence.entities.OrdersEntity;
 
+import java.math.BigDecimal;
+
 public class OrdersDTO {
 
     private String description;
     private String company;
-    private Long total;
+    private BigDecimal total;
 
     public OrdersDTO() {
 
     }
 
-    public OrdersDTO(String description, String company, Long total) {
+    public OrdersDTO(String description, String company, BigDecimal total) {
         this.description = description;
         this.company = company;
         this.total = total;
@@ -38,11 +40,11 @@ public class OrdersDTO {
         this.company = company;
     }
 
-    public Long getTotal() {
+    public BigDecimal getTotal() {
         return total;
     }
 
-    public void setTotal(Long total) {
+    public void setTotal(BigDecimal total) {
         this.total = total;
     }
 }

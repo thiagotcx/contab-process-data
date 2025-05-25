@@ -2,6 +2,7 @@ package contab.persistence.entities;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -29,7 +30,7 @@ public class OrderProductsEntity {
     private Double price;
 
     @Column(nullable = false)
-    private Long subTotal;
+    private BigDecimal subTotal;
 
     @Column(name = "is_deleted", nullable = false)
     private boolean isDeleted;
@@ -85,11 +86,11 @@ public class OrderProductsEntity {
         this.price = price;
     }
 
-    public Long getSubTotal() {
+    public BigDecimal getSubTotal() {
         return subTotal;
     }
 
-    public void setSubTotal(Long subTotal) {
+    public void setSubTotal(BigDecimal subTotal) {
         this.subTotal = subTotal;
     }
 
