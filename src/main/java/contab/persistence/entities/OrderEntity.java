@@ -42,7 +42,6 @@ public class OrderEntity {
     }
 
     public OrderEntity(
-            Long id,
             String document,
             String company,
             BigDecimal total,
@@ -50,7 +49,6 @@ public class OrderEntity {
             LocalDateTime createdAt,
             LocalDateTime updatedAt
             ) {
-        this.id = id;
         this.document = document;
         this.company = company;
         this.total = total;

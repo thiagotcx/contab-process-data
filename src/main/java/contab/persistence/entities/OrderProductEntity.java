@@ -46,8 +46,7 @@ public class OrderProductEntity {
     }
 
     public OrderProductEntity(
-            Long orderProductId,
-            Long orderId, String description,
+            String description,
             String barcode,
             Integer amount,
             BigDecimal price,
@@ -55,8 +54,6 @@ public class OrderProductEntity {
             Boolean isDeleted,
             LocalDateTime createdAt
             ) {
-        this.orderProductId = orderProductId;
-        this.orderId = orderId;
         this.description = description;
         this.barcode = barcode;
         this.amount = amount;

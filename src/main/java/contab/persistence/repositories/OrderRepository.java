@@ -31,7 +31,7 @@ public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
             AND o.id = :orderId
         GROUP BY o.document, o.total
     """)
-    public OrderSummaryDTO findOrderSummaryById(@Param("orderId") Long orderId);
+    public OrderSummaryDTO findOrderSummaryById(Long orderId);
 
     @Query(value = """
         SELECT
