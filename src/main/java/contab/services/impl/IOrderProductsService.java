@@ -5,5 +5,6 @@ import contab.dto.OrderProductsDTO;
 import java.util.List;
 
 public interface IOrderProductsService {
-    List<OrderProductsDTO> save();
+    List<OrderProductsDTO> saveByOrder(Long orderId, List<OrderProductsDTO> productsDTOS);
+
 }

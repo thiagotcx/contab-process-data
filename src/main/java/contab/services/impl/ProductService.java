@@ -15,8 +15,9 @@ public class ProductService implements IOrderProductsService {
         this.productRepository = productRepository;
     }
 
+
     @Override
-    public List<OrderProductsDTO> save() {
+    public List<OrderProductsDTO> saveByOrder(Long orderId, List<OrderProductsDTO> productsDTOS) {
         return List.of();
     }
 }
