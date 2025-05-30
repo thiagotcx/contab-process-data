@@ -1,13 +1,14 @@
 package contab.services.impl;
 
-import contab.dto.OrderProductsDTO;
+import contab.dto.ProductDTO;
 import contab.persistence.repositories.ProductRepository;
+import contab.services.IProductService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ProductService implements IOrderProductsService {
+public class ProductService implements IProductService {
 
     private final ProductRepository productRepository;
 
@@ -15,9 +16,8 @@ public class ProductService implements IOrderProductsService {
         this.productRepository = productRepository;
     }
 
-
     @Override
-    public List<OrderProductsDTO> saveByOrder(Long orderId, List<OrderProductsDTO> productsDTOS) {
-        return List.of();
+    public List<ProductDTO> getActiveProducts() {
+        return productRepository.getActiveProducts();
     }
 }
